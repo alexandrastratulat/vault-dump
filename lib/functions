@@ -20,7 +20,7 @@ function retrieve () {
 
 function write () {
   file_path=$1
-  secret_path=$(echo $file_path | sed "s#${FOLDER_IDENTIFIER}##g; s#${KV_FOLDER}##g; s#/#/data/#")
+  secret_path=$(echo $file_path | sed "s#${FOLDER_IDENTIFIER}##g; s#${KV_FOLDER}##g; s#/#/#")
 
   curl -s ${sock_proxy} \
     --header "X-Vault-Token: ${TOKEN}" \
