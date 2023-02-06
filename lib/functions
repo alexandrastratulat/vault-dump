@@ -15,7 +15,7 @@ function retrieve () {
   curl -s ${sock_proxy} \
     --header "X-Vault-Token: ${TOKEN}" \
     ${VAULT_ADDR}/v1/$1 \
-    | jq '{"data" : .data}'
+    | jq '{.data}'
 }
 
 function write () {
